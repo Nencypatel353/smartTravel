@@ -1,0 +1,148 @@
+/* PAGE */
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #e0f2fe, #f0fdfa);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* CARD */
+.signup-card {
+  width: 420px;
+  padding: 2.2rem 2.4rem;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* BRAND */
+.brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.brand img {
+  width: 48px;
+  margin-bottom: 0.6rem;
+}
+
+.brand h2 {
+  margin: 0;
+  color: #14b8a6;
+}
+
+.brand p {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* INPUT LAYOUT */
+.input-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.1rem;
+}
+
+.input-group label {
+  font-size: 0.82rem;
+  margin-bottom: 0.35rem;
+  color: #475569;
+}
+
+.input-group input {
+  height: 44px;
+  padding: 0 1rem;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+  font-size: 0.95rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.18);
+}
+
+/* TERMS */
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #475569;
+  margin: 1rem 0 1.6rem;
+}
+
+.terms a {
+  color: #0ea5e9;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.signup-btn {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(14, 165, 233, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.signup-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* DIVIDER */
+.divider {
+  margin: 1.8rem 0 1.2rem;
+  text-align: center;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 0.8rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  position: relative;
+}
+
+/* LOGIN LINK */
+.login-link {
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.login-link a {
+  color: #0ea5e9;
+  font-weight: 600;
+  cursor: pointer;
+}

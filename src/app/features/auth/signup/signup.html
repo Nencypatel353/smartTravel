@@ -1,0 +1,48 @@
+<div class="signup-page">
+  <div class="signup-card">
+
+    <!-- <div class="brand">
+      <img src="/smartTravelLogo.png" alt="SmartTravel Logo" />
+      <h2>Create Account</h2>
+      <p>Start planning your journey today</p>
+    </div> -->
+
+    <form [formGroup]="form">
+
+      <div class="input-group">
+        <label>Full name</label>
+        <input type="text" placeholder="John Doe" formControlName="fullName" />
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" formControlName="email" />
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" formControlName="password" />
+      </div>
+
+      <label class="terms">
+        <input type="checkbox" />
+        <span>
+          I agree to the <a>Terms</a> & <a>Privacy Policy</a>
+        </span>
+      </label>
+
+      <button (click)="signUp()" class="signup-btn">Create Account</button>
+
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <p class="login-link">
+        Already have an account?
+        <a routerLink="/login">Login</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>

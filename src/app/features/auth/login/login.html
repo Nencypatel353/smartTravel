@@ -1,0 +1,52 @@
+<div class="login-page">
+
+  <div class="login-card">
+    <div class="brand">
+      <img src="/smartTravelLogo.png" alt="SmartTravel Logo" />
+      <h2>SmartTravel</h2>
+      <p>Plan smarter. Travel better.</p>
+    </div>
+
+    <form [formGroup]="form">
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" formControlName="email" />
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <div class="password-wrapper">
+          <input [type]="showPassword ? 'text' : 'password'" placeholder="••••••••" formControlName="password" />
+          <button type="button" class="eye-btn" (click)="togglePassword()" aria-label="Toggle password visibility">
+            <span>{{ showPassword ? '🙈' : '👁️' }}</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="options">
+        <label>
+          <input type="checkbox" />
+          Remember me
+        </label>
+        <a class="forgot">Forgot password?</a>
+      </div>
+
+      <button type="button" (click)="login()" class="login-btn">Login</button>
+    </form>
+
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <!-- <button class="google-btn">
+      <img src="google-icon.png" alt="Google" />
+      Continue with Google
+    </button> -->
+
+    <p class="signup">
+      Don’t have an account?
+      <a routerLink="/signup" >Create one</a>
+    </p>
+  </div>
+
+</div>

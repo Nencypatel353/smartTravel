@@ -1,0 +1,99 @@
+<div class="questionnaire-page">
+
+  <!-- Background Orbs -->
+  <div class="orb orb-blue"></div>
+  <div class="orb orb-teal"></div>
+
+  <!-- ================= QUESTIONNAIRE ================= -->
+  @if (!finalDestination) {
+    <div class="questionnaire-card">
+
+      <!-- Progress Ring -->
+      <div class="progress-ring">
+        <svg viewBox="0 0 36 36">
+          <path
+            class="bg"
+            d="M18 2.0845
+               a 15.9155 15.9155 0 0 1 0 31.831
+               a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path
+            class="progress"
+            [attr.stroke-dasharray]="
+              ((currentStep + 1) / questions.length) * 100 + ', 100'
+            "
+            d="M18 2.0845
+               a 15.9155 15.9155 0 0 1 0 31.831
+               a 15.9155 15.9155 0 0 1 0 -31.831" />
+        </svg>
+        <span>{{ currentStep + 1 }}/{{ questions.length }}</span>
+      </div>
+
+      <!-- Question Section -->
+      <div class="question-header">
+        <div class="question-emoji">
+          {{ questions[currentStep].options[0].icon }}
+        </div>
+
+        <h2>{{ questions[currentStep].title }}</h2>
+        <p>Our AI is learning your travel personality ✨</p>
+      </div>
+
+      <!-- Options -->
+      <div class="options">
+        @for (option of questions[currentStep].options; track option.label) {
+          <button
+            class="option-btn"
+            [class.active]="selectedOption === option"
+            (click)="selectOption(option)">
+
+            <span class="icon">{{ option.icon }}</span>
+            {{ option.label }}
+
+          </button>
+        }
+      </div>
+
+      <!-- CTA Button -->
+      <button
+        class="next-btn"
+        (click)="nextQuestion()">
+
+        {{ currentStep === questions.length - 1
+          ? 'Reveal My Destination ✨'
+          : 'Next Question →' }}
+
+      </button>
+
+    </div>
+  }
+
+  <!-- ================= RESULT SECTION ================= -->
+@if (finalDestination) {
+  <div class="result-card">
+
+    <!-- Fireworks Animation Layer -->
+    <div class="fireworks">
+      @for (i of [1,2,3,4,5,6]; track i) {
+        <span class="firework firework-{{i}}"></span>
+      }
+    </div>
+
+    <h2 class="celebration-title">✨ Your Perfect Destination ✨</h2>
+
+    <h1 class="destination-name">
+      {{ finalDestination }}
+    </h1>
+
+    <p class="destination-subtitle">
+      Based on your answers, this destination suits you perfectly!
+    </p>
+
+   <button
+  class="restart-btn"
+  (click)="restartQuiz()">
+  🔄 Start Over
+</button>
+
+
+  </div>
+}

@@ -1,0 +1,141 @@
+:root {
+  --primary: #0fb9b1;
+  --secondary: #1e272e;
+  --bg: #f4fefe;
+  --card: #ffffff;
+  --muted: #6c757d;
+}
+
+.ai-page {
+  background: var(--bg);
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* HERO */
+.ai-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ai-hero h1 {
+  font-size: 36px;
+  color: var(--secondary);
+}
+
+.ai-hero p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* SECTIONS */
+.ai-section {
+  margin-bottom: 60px;
+}
+
+.ai-section.highlight {
+  background: linear-gradient(135deg, #0fb9b1, #2bcdd4);
+  padding: 30px;
+  border-radius: 18px;
+  color: white;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-badge {
+  background: rgba(15, 185, 177, 0.15);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ai-badge.smart {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.destination-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+}
+
+.destination-card h3 {
+  margin-bottom: 6px;
+}
+
+.destination-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--primary);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+
+/* SEASON */
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.season-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* CATEGORY */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.category-card {
+  background: white;
+  padding: 18px;
+  text-align: center;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.category-card:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-4px);
+}

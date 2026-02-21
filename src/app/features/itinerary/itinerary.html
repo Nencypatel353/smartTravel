@@ -1,0 +1,105 @@
+<div class="itinerary-page">
+
+  <!-- HEADER -->
+  <header class="itinerary-header">
+    <h1>Build Your Personalized Itinerary</h1>
+    <p>Pick a state or UT and let AI craft your perfect journey 🇮🇳</p>
+  </header>
+
+  <!-- CONTROLS -->
+  <section class="controls-card">
+
+    <!-- STATE / UT SELECT -->
+    <div class="control">
+      <label class="floating-label">State / Union Territory</label>
+
+      <div class="select-wrapper">
+        <select [(ngModel)]="selectedState">
+          @for (state of statesAndUTs; track state) {
+            <option [value]="state">
+              {{ state }}
+            </option>
+          }
+        </select>
+        <span class="dropdown-icon">⌄</span>
+      </div>
+    </div>
+
+    <!-- DAYS -->
+    <div class="control">
+      <label class="floating-label">Trip Duration</label>
+      <input
+        type="number"
+        min="2"
+        max="10"
+        [(ngModel)]="days"
+        placeholder="Number of days" />
+    </div>
+
+    <!-- PACE -->
+    <div class="control">
+      <label class="floating-label">Travel Pace</label>
+
+      <div class="pace-toggle">
+        @for (paceOption of paceOptions; track paceOption) {
+          <button
+            type="button"
+            (click)="pace = paceOption"
+            [class.active]="pace === paceOption">
+            {{ paceOption }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <!-- GENERATE -->
+    <button class="generate-btn" (click)="generateItinerary()">
+      🤖 Generate My Trip
+    </button>
+
+  </section>
+
+  <!-- ITINERARY -->
+  @if (itinerary.length > 0) {
+    <section class="itinerary-section">
+
+      <h2>🗺 Your AI-Planned Journey</h2>
+
+      <p class="hint">
+        Drag & drop days to reorder your plan
+      </p>
+
+      <div
+        cdkDropList
+        class="day-list"
+        (cdkDropListDropped)="drop($event)">
+
+        @for (day of itinerary; track day; let i = $index) {
+          <div class="day-card" cdkDrag>
+
+            <div class="day-header">
+              <h3>Day {{ i + 1 }}</h3>
+              <span class="location">{{ day.city }}</span>
+              <span class="badge">AI Planned</span>
+            </div>
+
+            <ul class="activity-list">
+              @for (activity of day.activities; track activity) {
+                <li>✨ {{ activity }}</li>
+              }
+            </ul>
+
+          </div>
+        }
+      </div>
+
+      <div class="actions">
+        <button class="export-btn" (click)="exportPDF()">
+          📄 Export Itinerary as PDF
+        </button>
+      </div>
+
+    </section>
+  }
+
+</div>

@@ -1,0 +1,89 @@
+<div class="bucket-wrapper">
+
+  <!-- HERO HEADER -->
+  <section class="bucket-hero">
+    <h1>🎒 Travel Bucket List</h1>
+    <p>Dream it. Save it. Complete it. 🌍</p>
+
+    <div class="progress-pill">
+      {{ bucketList.length }} Dreams Saved ✨
+    </div>
+  </section>
+
+  <!-- ADD CARD -->
+  <section class="add-card">
+    <h2>➕ Add a New Dream Trip</h2>
+
+    <div class="fun-form">
+      <div class="input-box">
+        <span>📍</span>
+        <input placeholder="Destination" [(ngModel)]="bucket.destination" />
+      </div>
+
+      <div class="input-box">
+        <span>🌍</span>
+        <input placeholder="City / Country" [(ngModel)]="bucket.place" />
+      </div>
+
+      <div class="input-box">
+        <span>🎯</span>
+        <select [(ngModel)]="bucket.priority">
+          <option value="">Priority</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+
+      <div class="input-box">
+        <span>🧭</span>
+        <select [(ngModel)]="bucket.type">
+          <option value="">Travel Type</option>
+          <option>Adventure</option>
+          <option>Relax</option>
+          <option>Culture</option>
+          <option>Solo</option>
+          <option>Family</option>
+        </select>
+      </div>
+
+      <div class="input-box">
+        <span>📆</span>
+        <input type="number" placeholder="Target Year" [(ngModel)]="bucket.year" />
+      </div>
+
+      <div class="input-box full">
+        <span>💭</span>
+        <textarea placeholder="Why this trip?" [(ngModel)]="bucket.notes"></textarea>
+      </div>
+    </div>
+
+    <button class="add-btn" (click)="addBucket()">✨ Add to Bucket</button>
+  </section>
+
+  <!-- BUCKET CARDS -->
+  <section class="bucket-grid">
+    <div class="dream-card"
+         *ngFor="let item of bucketList; let i = index"
+         [class.done]="item.completed">
+
+      <div class="card-header">
+        <h3>{{ item.destination }}</h3>
+        <span class="priority {{ item.priority }}">{{ item.priority }}</span>
+      </div>
+
+      <p class="place">📍 {{ item.place }}</p>
+      <p class="type">🧭 {{ item.type }} • {{ item.year }}</p>
+      <p class="note">{{ item.notes }}</p>
+
+      <div class="card-actions">
+        <button class="complete" (click)="markCompleted(i)">
+          {{ item.completed ? '🎉 Completed' : '✅ Complete' }}
+        </button>
+
+        <button class="remove" (click)="removeBucket(i)">🗑</button>
+      </div>
+    </div>
+  </section>
+
+</div>
