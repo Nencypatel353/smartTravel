@@ -1,122 +1,129 @@
 <div class="landing">
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="/smartTravelLogo.png" alt="SmartTravel Logo" />
-      <span>SmartTravel</span>
-    </div>
+<header class="navbar">
 
-    <nav>
-      <a>About</a>
-      <a>Contact</a>
-      <a>Privacy</a>
-      <button class="nav-btn" routerLink="/login">
-        Login
-      </button>
+  <div class="logo">
+    <img src="/smartTravelLogo.png" />
+    <span>SmartTravel</span>
+  </div>
 
-    </nav>
-  </header>
+  <nav>
+    <a>Features</a>
+    <a>How it works</a>
+    <a>Pricing</a>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>
-        Plan Smarter.<br />
-        <span>Travel Better.</span>
-      </h1>
+    <button routerLink="/login" class="nav-btn">
+      Get Started 🚀
+    </button>
+  </nav>
 
-      <p>
-        AI-powered travel planning that creates personalized itineraries
-        tailored to your style, budget, and preferences — in minutes.
-      </p>
+</header>
 
-      <div class="hero-actions">
-        <button class="primary-btn">Get Started</button>
-        <a class="how-it-works">How it works →</a>
-      </div>
-    </div>
+<!-- HERO -->
+<section class="hero">
 
-    <div class="hero-illustration" style="padding-left: 125px;">
-      <img src="illustration2.jpeg" alt="Travel illustration" />
-    </div>
-  </section>
+  <div class="hero-content">
 
-  <!-- FEATURES -->
-  <section class="features">
-    <h2>Why Choose SmartTravel?</h2>
-    <p class="features-subtitle">
-      Everything you need to plan a perfect trip
+    <h1>
+      The Future of<br>
+      <span>Smart Travel Planning</span>
+    </h1>
+
+    <p>
+      AI-powered itineraries built around your style, budget, and dreams —
+      beautifully organized in minutes.
     </p>
 
-    <div class="features-grid">
-      <div routerLink="questions" class="feature-card">
-        <span>📝</span>
-        <h4>Quick Questionnaire</h4>
-        <p>Answer a few simple questions</p>
-      </div>
-
-      <div routerLink="aiRecommendation" class="feature-card">
-        <span>📍</span>
-        <h4>AI Recommendations</h4>
-        <p>Smart destination suggestions</p>
-      </div>
-
-      <div routerLink="itenary" class="feature-card">
-        <span>🧳</span>
-        <h4>Personalized Itinerary</h4>
-        <p>Trips crafted just for you</p>
-      </div>
-
-      <div class="feature-card">
-        <span>👤</span>
-        <h4>Preferences Based</h4>
-        <p>Travel your own way</p>
-      </div>
-
-      <div class="feature-card">
-        <span>💡</span>
-        <h4>Budget Planning</h4>
-        <p>Optimized cost breakdowns</p>
-      </div>
-
-      <div class="feature-card">
-        <span>📂</span>
-        <h4>Curated Destinations</h4>
-        <p>Hand-picked locations</p>
-      </div>
-      <div routerLink="map-planner" class="feature-card">
-        <span>🗺️</span>
-        <h4>Interactive Map Planner</h4>
-        <p>Visualize your trip on a map</p>
-      </div>
-
-      <div routerLink="bucketList" class="feature-card">
-        <span>🎒</span>
-        <h4>Bucket List</h4>
-        <p>AI-generated packing suggestions</p>
-      </div>
-
-      <div class="feature-card">
-        <span>💬</span>
-        <h4>Travel Companion AI</h4>
-        <p>Chat with AI for real-time tips</p>
-      </div>
-
-      <div class="feature-card">
-        <span>🏆</span>
-        <h4>Travel Badges</h4>
-        <p>Earn rewards for your adventures</p>
-      </div>
-
+    <div class="hero-buttons">
+      <button class="primary-btn">Start Planning Free</button>
+      <button class="outline-btn">See Demo</button>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h3>Start planning your next adventure today</h3>
-    <p>Build your dream trip in just a few clicks</p>
-    <button class="cta-btn">Start Free</button>
-  </section>
+    <div class="hero-stats">
+      <div><strong>5K+</strong><span>Trips Planned</span></div>
+      <div><strong>4.8★</strong><span>User Rating</span></div>
+      <div><strong>100+</strong><span>Destinations</span></div>
+    </div>
+
+  </div>
+
+<div class="product-preview">
+
+  <div class="card itinerary">
+    ✈️ Goa Trip<br>
+    <small>3 Days • Beach • Food</small>
+  </div>
+
+  <div class="card map">
+    🗺 Mumbai → Goa
+  </div>
+
+  <div class="card budget">
+    💰 Budget: ₹12,000
+  </div>
+
+  <div class="card bucket">
+    🎒 Bucket List Ready
+  </div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+
+  <h2>Everything You Need for the Perfect Trip</h2>
+
+  <div class="features-grid">
+
+    <div routerLink="questions" class="feature-card">
+      <div class="icon">📝</div>
+      <h4>Quick Questionnaire</h4>
+      <p>Tell us your style in seconds.</p>
+    </div>
+
+    <div routerLink="aiRecommendation" class="feature-card">
+      <div class="icon">📍</div>
+      <h4>AI Recommendations</h4>
+      <p>Smart destination matching.</p>
+    </div>
+
+    <div routerLink="itenary" class="feature-card">
+      <div class="icon">🧳</div>
+      <h4>Personalized Itinerary</h4>
+      <p>Beautiful daily plans built for you.</p>
+    </div>
+
+    <div routerLink="map-planner" class="feature-card">
+      <div class="icon">🗺️</div>
+      <h4>Interactive Map</h4>
+      <p>Visualize everything in one place.</p>
+    </div>
+
+    <div routerLink="bucketList" class="feature-card">
+      <div class="icon">🎒</div>
+      <h4>Bucket List</h4>
+      <p>Save dream destinations.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">💬</div>
+      <h4>Travel Companion AI</h4>
+      <p>Real-time smart assistance.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+  <h2>Your Next Adventure Starts Here ✈️</h2>
+  <p>No credit card required. Start exploring today.</p>
+  <button class="cta-btn">Create My Trip</button>
+
+</section>
 
 </div>
