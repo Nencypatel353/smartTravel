@@ -1,13 +1,19 @@
 {
   "name": "smart-travel",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "private": true,
+
+"scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+
+  "build-gh": "ng build --configuration production --base-href /smartTravel/",
+  "deploy-gh": "npx gh-pages -d dist/smartTravel/browser"
+},
+
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,
@@ -20,7 +26,7 @@
       }
     ]
   },
-  "private": true,
+
   "dependencies": {
     "@angular/cdk": "^20.2.14",
     "@angular/common": "^20.3.0",
@@ -35,12 +41,14 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
+
   "devDependencies": {
     "@angular/build": "^20.3.1",
     "@angular/cli": "^20.3.1",
     "@angular/compiler-cli": "^20.3.0",
     "@types/jasmine": "~5.1.0",
     "@types/leaflet": "^1.9.21",
+    "gh-pages": "^6.3.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
