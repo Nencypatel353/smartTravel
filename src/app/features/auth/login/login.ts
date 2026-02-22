@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class Login {
 
   form: any
 
-  constructor(private fb: FormBuilder,private http: HttpClient) {
+  constructor(private fb: FormBuilder,private http: HttpClient,private router: Router) {
     this.form = this.fb.group({
       email: [''],
       password: ['']
@@ -39,7 +40,9 @@ export class Login {
       console.log(res.message);
 
       if (res.message === 'Login successful!') {
-        alert('Login Success');
+        // alert('Login Success');
+        this.router.navigate(['']); // or any route you want
+
       } else {
         alert(res.message);
       }

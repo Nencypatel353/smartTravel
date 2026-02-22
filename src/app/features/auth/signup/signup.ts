@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,7 @@ export class Signup {
 
     form: any
 
-    constructor(private fb: FormBuilder,private http: HttpClient) {
+    constructor(private fb: FormBuilder,private http: HttpClient,private router: Router) {
     this.form = this.fb.group({
       email: [''],
       password: [''],
@@ -31,12 +32,12 @@ export class Signup {
     .subscribe({
       next: (response: any) => {
         console.log('Signup Success:', response);
-        alert(response);
+        alert(response.message);
 
-        if (response === "User registered successfully!") {
+        if (response.message === "User registered successfully!") {
           this.form.reset();
           // Optional: navigate to login page
-          // this.router.navigate(['/login']);
+          this.router.navigate(['']);
         }
       },
       error: (error) => {
