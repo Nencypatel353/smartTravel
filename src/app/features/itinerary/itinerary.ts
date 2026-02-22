@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Trip } from '../trip';
 import {
   DragDropModule,
   CdkDragDrop,
@@ -15,6 +16,9 @@ import {
   styleUrl: './itinerary.scss',
 })
 export class Itinerary {
+
+    constructor(private tripService: Trip) {}
+
 
   /* ===========================
      STATES & UNION TERRITORIES
@@ -67,6 +71,8 @@ export class Itinerary {
   selectedState: string = 'Rajasthan';
   days: number = 5;
   pace: string = 'Balanced';
+  loading: boolean = false;
+
 
   paceOptions: string[] = ['Relaxed', 'Balanced', 'Packed'];
 
@@ -98,21 +104,28 @@ export class Itinerary {
   /* ===========================
      GENERATE ITINERARY
   ============================ */
-  generateItinerary(): void {
-    this.itinerary = [];
+generateItinerary() {
 
-    const cities =
-      this.stateCityMap[this.selectedState] ||
-      this.stateCityMap['default'];
+    const tripData = {
+      destination: this.selectedState,
+      tripDuration: this.days,
+      travelPace: this.pace
+    };
 
-    for (let i = 0; i < this.days; i++) {
-      const city = cities[i % cities.length];
+    this.loading = true;
 
-      this.itinerary.push({
-        city,
-        activities: this.getActivitiesByPace(city)
+    this.tripService.createTrip(tripData)
+      .subscribe({
+        next: (response) => {
+          console.log('Trip Generated:', response);
+          this.itinerary = response.aiPlan;
+          this.loading = false;
+        },
+        error: (error) => {
+          console.error('Error generating trip', error);
+          this.loading = false;
+        }
       });
-    }
   }
 
   /* ===========================

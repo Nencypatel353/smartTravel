@@ -45,3 +45,14 @@
   </button>
 
 </div>
+
+<!-- LOADING -->
+<div *ngIf="loading">
+  Generating your AI travel plan...
+</div>
+
+<!-- RESULT -->
+<div *ngIf="itinerary" class="itinerary-result">
+  <h3>Your AI Travel Plan</h3>
+  <pre>{{ itinerary }}</pre>
+</div>
